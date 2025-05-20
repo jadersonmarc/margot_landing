@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MargotAI - Soluções Inteligentes para seu Negócio</title>
+  <meta name="description" content="Produtos e serviços com IA integrada para transformar seu negócio">
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font/lucide.min.css">
+  
+  <style>
+    :root {
+      --blue-50: #f0f7ff;
+      --blue-100: #e0eefe;
+      --blue-200: #bae0fd;
+      --blue-300: #7cc8fb;
+      --blue-400: #36aaf5;
+      --blue-500: #0c8ee3;
+      --blue-600: #0271c2;
+      --blue-700: #035a9e;
+      --blue-800: #074b83;
+      --blue-900: #0c406d;
+      --blue-950: #082a4a;
+      
+      --gray-50: #f8f9fa;
+      --gray-100: #f1f3f5;
+      --gray-200: #e9ecef;
+      --gray-300: #dee2e6;
+      --gray-400: #ced4da;
+      --gray-500: #adb5bd;
+      --gray-600: #868e96;
+      --gray-700: #495057;
+      --gray-800: #343a40;
+      --gray-900: #212529;
+      --gray-950: #0d0f10;
+      
+      --purple-500: #8b5cf6;
+      --purple-600: #7c3aed;
+      
+      --green-500: #10b981;
+      
+      --white: #ffffff;
+      --black: #000000;
+      
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      
+      --radius: 0.5rem;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-900);
+      line-height: 1.5;
+      background-color: var(--white);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--blue-900);
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+    
+    .section {
+      padding: 3rem 0;
+    }
+    
+    @media (min-width: 768px) {
+      .section {
+        padding: 6rem 0;
+      }
+    }
+    
+    /* Grid & Flex */
+    .flex {
+      display: flex;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .gap-2 {
+      gap: 0.5rem;
+    }
+    
+    .gap-4 {
+      gap: 1rem;
+    }
+    
+    .gap-6 {
+      gap: 1.5rem;
+    }
+    
+    .gap-8 {
+      gap: 2rem;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      
+      .md\:flex-row {
+        flex-direction: row;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      
+      .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    
+    /* Typography */
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-sm {
+      font-size: 0.875rem;
+    }
+    
+    .text-base {
+      font-size: 1rem;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+    
+    .text-5xl {
+      font-size: 3rem;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .font-semibold {
+      font-weight: 600;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    .text-white {
+      color: var(--white);
+    }
+    
+    .text-black {
+      color: var(--black);
+    }
+    
+    .text-blue-600 {
+      color: var(--blue-600);
+    }
+    
+    .text-blue-900 {
+      color: var(--blue-900);
+    }
+    
+    .text-gray-400 {
+      color: var(--gray-400);
+    }
+    
+    .text-gray-500 {
+      color: var(--gray-500);
+    }
+    
+    .text-gray-600 {
+      color: var(--gray-600);
+    }
+    
+    .text-gray-700 {
+      color: var(--gray-700);
+    }
+    
+    /* Spacing */
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+    
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+    
+    .mb-16 {
+      margin-bottom: 4rem;
+    }
+    
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+    
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    
+    .mt-8 {
+      margin-top: 2rem;
+    }
+    
+    .mt-12 {
+      margin-top: 3rem;
+    }
+    
+    .mt-16 {
+      margin-top: 4rem;
+    }
+    
+    .ml-1 {
+      margin-left: 0.25rem;
+    }
+    
+    .ml-2 {
+      margin-left: 0.5rem;
+    }
+    
+    .ml-4 {
+      margin-left: 1rem;
+    }
+    
+    .space-y-2 > * + * {
+      margin-top: 0.5rem;
+    }
+    
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+    
+    .space-x-2 > * + * {
+      margin-left: 0.5rem;
+    }
+    
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+    
+    /* Components */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-family: var(--font-body);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    
+    .btn-sm {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+    }
+    
+    .btn-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--blue-600);
+      color: var(--white);
+      border: 1px solid var(--blue-600);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--blue-700);
+      border-color: var(--blue-700);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--blue-600);
+      border: 1px solid var(--blue-600);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--blue-50);
+    }
+    
+    .btn-white {
+      background-color: var(--white);
+      color: var(--blue-900);
+      border: 1px solid var(--white);
+    }
+    
+    .btn-white:hover {
+      background-color: var(--blue-50);
+    }
+    
+    .btn-white-outline {
+      background-color: transparent;
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
+    
+    .btn-white-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .btn-full {
+      width: 100%;
+    }
+    
+    .card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--blue-200);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease;
+    }
+    
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .card-header {
+      padding: 1.5rem 1.5rem 0.5rem;
+    }
+    
+    .card-content {
+      padding: 1rem 1.5rem;
+    }
+    
+    .card-footer {
+      padding: 1rem 1.5rem 1.5rem;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      background-color: var(--blue-600);
+      color: var(--white);
+    }
+    
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    
+    .icon-sm {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    .icon-lg {
+      width: 2rem;
+      height: 2rem;
+    }
+    
+    .icon-xl {
+      width: 3rem;
+      height: 3rem;
+    }
+    
+    .icon-feature {
+      width: 3rem;
+      height: 3rem;
+      color: var(--blue-600);
+      margin-bottom: 1rem;
+    }
+    
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .header-container {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--blue-600);
+    }
+    
+    .nav {
+      display: none;
+    }
+    
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: color 0.2s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--blue-600);
+    }
+    
+    .header-actions {
+      display: none;
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: transparent;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+    
+    .mobile-menu-btn:hover {
+      background-color: var(--gray-100);
+    }
+    
+    .mobile-menu {
+      display: none;
+      padding: 1rem 0;
+      border-top: 1px solid var(--gray-200);
+    }
+    
+    .mobile-menu.active {
+      display: block;
+    }
+    
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .mobile-nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      padding: 0.5rem 0;
+    }
+    
+    .mobile-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+      
+      .header-actions {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to bottom, var(--white), var(--blue-50));
+      padding: 3rem 0;
+      overflow: hidden;
+    }
+    
+    @media (min-width: 768px) {
+      .hero {
+        padding: 6rem 0;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 8rem 0;
+      }
+    }
+    
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-content {
+        flex-direction: row;
+        align-items: center;
+      }
+      
+      .hero-text {
+        flex: 1;
+      }
+      
+      .hero-image-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.75rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4rem;
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      max-width: 36rem;
+    }
+    
+    @media (min-width: 768px) {
+      .hero-subtitle {
+        font-size: 1.25rem;
+      }
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .hero-buttons {
+        flex-direction: row;
+      }
+    }
+    
+    .hero-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-image {
+        margin: 0 0 0 auto;
+      }
+    }
+    
+    /* Sections */
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--blue-900);
+    }
+    
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 3rem;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Products Section */
+    .product-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .feature-icon {
+      color: var(--green-500);
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+    
+    /* Services Section */
+    .services {
+      background-color: var(--gray-50);
+    }
+    
+    /* Institutional Section */
+    .institutional {
+      background: linear-gradient(to bottom, var(--white), var(--blue-50));
+    }
+    
+    .approach {
+      background-color: var(--blue-900);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    
+    .approach-card {
+      background-color: var(--blue-800);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    
+    .approach-title {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    
+    .approach-card-title {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Pricing Section */
+    .pricing-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .pricing-card.popular {
+      border-color: var(--blue-600);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .popular-badge {
+      background-color: var(--blue-600);
+      color: var(--white);
+      text-align: center;
+      padding: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .price {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--blue-900);
+      margin-bottom: 1.5rem;
+    }
+    
+    .price-period {
+      font-size: 1rem;
+      color: var(--gray-500);
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background-color: var(--gray-50);
+    }
+    
+    .quote-icon {
+      color: var(--blue-300);
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: var(--gray-700);
+    }
+    
+    .testimonial-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      background-color: var(--blue-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--blue-600);
+    }
+    
+    .client-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .client-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-400);
+    }
+    
+    /* CTA Section */
+    .cta {
+      background-color: var(--blue-900);
+      color: var(--white);
+    }
+    
+    .cta-title {
+      color: var(--white);
+    }
+    
+    .cta-text {
+      color: var(--blue-100);
+      margin-bottom: 2rem;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--gray-900);
+      color: var(--gray-200);
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-title {
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-text {
+      color: var(--gray-400);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-link {
+      color: var(--gray-400);
+      margin-bottom: 0.5rem;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-link:hover {
+      color: var(--white);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      color: var(--gray-400);
+      transition: color 0.2s ease;
+    }
+    
+    .social-link:hover {
+      color: var(--white);
+    }
+    
+    .footer-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .footer-input {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-700);
+      background-color: var(--gray-800);
+      color: var(--white);
+      font-family: var(--font-body);
+    }
+    
+    .footer-input:focus {
+      outline: none;
+      border-color: var(--blue-600);
+    }
+    
+    .footer-copyright {
+      text-align: center;
+      color: var(--gray-400);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-800);
+    }
+    
+    /* Utilities */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      .md\:hidden {
+        display: none;
+      }
+      
+      .md\:block {
+        display: block;
+      }
+      
+      .md\:flex {
+        display: flex;
+      }
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .h-full {
+      height: 100%;
+    }
+    
+    .bg-white {
+      background-color: var(--white);
+    }
+    
+    .bg-blue-50 {
+      background-color: var(--blue-50);
+    }
+    
+    .bg-blue-600 {
+      background-color: var(--blue-600);
+    }
+    
+    .bg-blue-900 {
+      background-color: var(--blue-900);
+    }
+    
+    .bg-gray-50 {
+      background-color: var(--gray-50);
+    }
+    
+    .bg-gray-900 {
+      background-color: var(--gray-900);
+    }
+    
+    .rounded {
+      border-radius: var(--radius);
+    }
+    
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    
+    .border-t {
+      border-top-width: 1px;
+    }
+    
+    .border-blue-200 {
+      border-color: var(--blue-200);
+    }
+    
+    .border-blue-600 {
+      border-color: var(--blue-600);
+    }
+    
+    .border-gray-200 {
+      border-color: var(--gray-200);
+    }
+    
+    .border-gray-800 {
+      border-color: var(--gray-800);
+    }
+    
+    .shadow-sm {
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .shadow-md {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .transition {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">MargotAI</a>
+      
+      <nav class="nav">
+        <a href="#produtos" class="nav-link">Produtos</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#precos" class="nav-link">Preços</a>
+        <a href="#clientes" class="nav-link">Clientes</a>
+      </nav>
+      
+      <div class="header-actions">
+        <a href="#" class="btn btn-sm btn-outline">Entrar</a>
+        <a href="#" class="btn btn-sm btn-primary">Experimente Grátis</a>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="container mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav">
+        <a href="#produtos" class="mobile-nav-link">Produtos</a>
+        <a href="#servicos" class="mobile-nav-link">Serviços</a>
+        <a href="#precos" class="mobile-nav-link">Preços</a>
+        <a href="#clientes" class="mobile-nav-link">Clientes</a>
+      </nav>
+      <div class="mobile-actions">
+        <a href="#" class="btn btn-sm btn-outline btn-full">Entrar</a>
+        <a href="#" class="btn btn-sm btn-primary btn-full">Experimente Grátis</a>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">Transforme seu negócio com a <span class="text-blue-600">inteligência artificial</span></h1>
+            <p class="hero-subtitle">Soluções inteligentes que automatizam processos, geram insights e potencializam seus resultados.</p>
+            <!-- <div class="hero-buttons">
+              <a href="#" class="btn btn-lg btn-primary">
+                Experimente Grátis
+                <img src="public/margot_logo.png" width="20" height="20" alt="Margot Logo" class="ml-2">
+              </a>
+              <a href="#" class="btn btn-lg btn-outline">Saiba Mais</a>
+            </div> -->
+          </div>
+          <div class="hero-image-container">
+            <img src="public/margot_logo.png" alt="MargotAI Illustration" class="hero-image">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="section" id="produtos">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Produtos MargotAI</h2>
+          <p class="section-subtitle">Nossas soluções por assinatura com inteligência artificial integrada</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Margot Dashboard -->
+          <div class="card">
+            <div class="card-header">
+              <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M8 17V7"></path>
+                  <path d="M12 17V11"></path>
+                  <path d="M16 17V14"></path>
+                </svg>
+                <h3 class="text-2xl font-bold text-blue-900">Margot Dashboard</h3>
+              </div>
+              <p class="text-gray-600">Plataforma para visualização de dados com assistente inteligente</p>
+            </div>
+            <div class="card-content">
+              <img src="public/dashboard.png" alt="Margot Dashboard Preview" class="product-image">
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Assistente "Margot" para análise de dados</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Dashboards personalizáveis e interativos</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Geração automática de relatórios</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Insights preditivos baseados em IA</span>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="card-footer">
+              <a href="#" class="btn btn-primary btn-full">Conheça o Margot Dashboard</a>
+            </div> -->
+          </div>
+          
+          <!-- Margot Story -->
+          <div class="card">
+            <div class="card-header">
+              <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                  <line x1="10" x2="8" y1="9" y2="9"></line>
+                </svg>
+                <h3 class="text-2xl font-bold text-blue-900">Margot Story</h3>
+              </div>
+              <p class="text-gray-600">Plataforma de gerenciamento de conteúdo com análise semântica</p>
+            </div>
+            <div class="card-content">
+              <img src="public/creator.png" alt="Margot Story Preview" class="product-image">
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Análise semântica de conteúdo</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>SEO automatizado e otimizado</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Análise de impacto emocional</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Geração de postagens para redes sociais</span>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="card-footer">
+              <a href="#" class="btn btn-primary btn-full">Conheça o Margot Story</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Serviços Inteligentes</h2>
+          <p class="section-subtitle">Soluções personalizadas sob demanda para atender às necessidades específicas do seu negócio</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Service 1 -->
+          <div class="card">
+            <div class="card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-feature">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" x2="22" y1="12" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <h3 class="text-xl font-bold text-blue-900">Sites Institucionais</h3>
+            </div>
+            <div class="card-content">
+              <p class="text-gray-600">Desenvolvimento de sites institucionais com IA integrada para melhorar a experiência do usuário e aumentar conversões.</p>
+            </div>
+          </div>
+          
+          <!-- Service 2 -->
+          <div class="card">
+            <div class="card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-feature">
+                <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+              </svg>
+              <h3 class="text-xl font-bold text-blue-900">Blogs Automatizados</h3>
+            </div>
+            <div class="card-content">
+              <p class="text-gray-600">Criação de blogs com geração de conteúdo automatizado, otimizado para SEO e personalizado para seu público-alvo.</p>
+            </div>
+          </div>
+          
+          <!-- Service 3 -->
+          <div class="card">
+            <div class="card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-feature">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                <path d="M3 6h18"></path>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              <h3 class="text-xl font-bold text-blue-900">Lojas Online Inteligentes</h3>
+            </div>
+            <div class="card-content">
+              <p class="text-gray-600">E-commerces com recomendação inteligente de produtos, chatbot para atendimento e SEO dinâmico.</p>
+            </div>
+          </div>
+          
+          <!-- Service 4 -->
+          <div class="card">
+            <div class="card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-feature">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <h3 class="text-xl font-bold text-blue-900">Chatbots Personalizados</h3>
+            </div>
+            <div class="card-content">
+              <p class="text-gray-600">Chatbots treinados com o conteúdo da sua empresa, integráveis com WhatsApp, Messenger, sites ou aplicativos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Institutional Section -->
+    <section class="section institutional" id="institucional">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Quem Somos</h2>
+          <p class="section-subtitle">Conheça nossos princípios e o que nos move</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Missão -->
+          <div class="card">
+            <div class="card-header">
+              <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <h3 class="text-xl font-bold text-blue-900">Missão</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="text-gray-700">
+                Democratizar e aplicar soluções de Inteligência Artificial para transformar a operação de empresas e
+                profissionais, com foco em eficiência, inovação e acessibilidade.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Visão -->
+          <div class="card">
+            <div class="card-header">
+              <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <h3 class="text-xl font-bold text-blue-900">Visão</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="text-gray-700">
+                Ser referência nacional em soluções práticas e inteligentes de IA no mercado de serviços digitais e
+                automações.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Valores -->
+          <div class="card">
+            <div class="card-header">
+              <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                  <path d="M12 1v5"></path>
+                  <path d="M6.3 6.3 4.9 4.9"></path>
+                  <path d="M1 12h5"></path>
+                  <path d="M6.3 17.7 4.9 19.1"></path>
+                  <path d="M12 23v-5"></path>
+                  <path d="M17.7 17.7 19.1 19.1"></path>
+                  <path d="M23 12h-5"></path>
+                  <path d="M17.7 6.3 19.1 4.9"></path>
+                </svg>
+                <h3 class="text-xl font-bold text-blue-900">Valores</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="grid grid-cols-1 gap-3">
+                <div>
+                  <span class="font-medium text-blue-800">Inovação</span>
+                  <p class="text-sm text-gray-600">Buscamos constantemente novas soluções e tecnologias.</p>
+                </div>
+                <div>
+                  <span class="font-medium text-blue-800">Ética</span>
+                  <p class="text-sm text-gray-600">Comprometimento com práticas responsáveis e transparentes.</p>
+                </div>
+                <div>
+                  <span class="font-medium text-blue-800">Clareza</span>
+                  <p class="text-sm text-gray-600">Comunicação direta e soluções de fácil compreensão.</p>
+                </div>
+                <div>
+                  <span class="font-medium text-blue-800">Acessibilidade</span>
+                  <p class="text-sm text-gray-600">Tecnologia avançada ao alcance de todos.</p>
+                </div>
+                <div>
+                  <span class="font-medium text-blue-800">Resultados</span>
+                  <p class="text-sm text-gray-600">Foco em entregar valor mensurável aos clientes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="approach">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="approach-title text-2xl font-bold">Nossa Abordagem</h3>
+              <p class="mb-4">
+                Na MargotAI, acreditamos que a inteligência artificial deve ser acessível e prática. Nossa abordagem
+                combina tecnologia de ponta com soluções intuitivas que realmente resolvem problemas do dia a dia.
+              </p>
+              <p>
+                Trabalhamos em estreita colaboração com nossos clientes para entender suas necessidades específicas e
+                desenvolver soluções personalizadas que impulsionam resultados reais.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="approach-card">
+                <h4 class="approach-card-title font-bold">Tecnologia</h4>
+                <p class="text-sm">
+                  Utilizamos as mais avançadas tecnologias de IA disponíveis no mercado.
+                </p>
+              </div>
+              <div class="approach-card">
+                <h4 class="approach-card-title font-bold">Personalização</h4>
+                <p class="text-sm">Cada solução é adaptada às necessidades específicas do seu negócio.</p>
+              </div>
+              <div class="approach-card">
+                <h4 class="approach-card-title font-bold">Suporte</h4>
+                <p class="text-sm">Oferecemos suporte contínuo para garantir o sucesso da implementação.</p>
+              </div>
+              <div class="approach-card">
+                <h4 class="approach-card-title font-bold">Inovação</h4>
+                <p class="text-sm">Estamos sempre atualizando nossas soluções com as últimas inovações.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="section" id="precos">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Planos e Preços</h2>
+          <p class="section-subtitle">Escolha o plano ideal para o seu negócio</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Margot Dashboard -->
+          <div class="pricing-card card">
+            <div class="card-header">
+              <h3 class="text-2xl font-bold text-blue-900">Margot Dashboard</h3>
+              <p class="text-gray-600">Visualização de dados com assistente inteligente</p>
+            </div>
+            <div class="card-content">
+              <div class="price">
+                R$ 199<span class="price-period">/mês</span>
+              </div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Assistente 'Margot' para análise</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Dashboards personalizáveis</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Geração de relatórios</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Insights preditivos</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Suporte por email</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary btn-full">Começar Agora</a>
+            </div>
+          </div>
+          
+          <!-- Margot Story -->
+          <div class="pricing-card card popular">
+            <!-- <div class="popular-badge">Mais Popular</div> -->
+            <div class="card-header">
+              <h3 class="text-2xl font-bold text-blue-900">Margot Story</h3>
+              <p class="text-gray-600">Gerenciamento de conteúdo com análise semântica</p>
+            </div>
+            <div class="card-content">
+              <div class="price">
+                R$ 249<span class="price-period">/mês</span>
+              </div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Análise semântica de conteúdo</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>SEO automatizado</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Análise de impacto emocional</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Geração de posts para redes sociais</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Suporte prioritário</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary btn-full">Começar Agora</a>
+            </div>
+          </div>
+          
+          <!-- Combo Completo -->
+          <div class="pricing-card card">
+            <div class="card-header">
+              <h3 class="text-2xl font-bold text-blue-900">Combo Completo</h3>
+              <p class="text-gray-600">Dashboard + Story com desconto especial</p>
+            </div>
+            <div class="card-content">
+              <div class="price">
+                R$ 399<span class="price-period">/mês</span>
+              </div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Todas as funcionalidades do Dashboard</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Todas as funcionalidades do Story</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Integração entre plataformas</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Treinamento personalizado</span>
+                </li>
+                <li class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <span>Suporte 24/7</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary btn-full">Começar Agora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="clientes">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+          <p class="section-subtitle">Histórias de sucesso de quem já utiliza nossas soluções</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="card">
+            <div class="card-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="quote-icon">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+              </svg>
+              <p class="testimonial-text">A MargotAI transformou completamente nossa estratégia de marketing digital. O Margot Story nos ajudou a criar conteúdo relevante e otimizado para SEO de forma muito mais eficiente.</p>
+              <div class="flex items-center gap-4">
+                <div class="testimonial-avatar">A</div>
+                <div>
+                  <p class="font-medium text-blue-900">Ana Silva</p>
+                  <p class="text-sm text-gray-500">Diretora de Marketing, TechCorp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="card">
+            <div class="card-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="quote-icon">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+              </svg>
+              <p class="testimonial-text">Com o Margot Dashboard, conseguimos visualizar nossos dados de forma clara e obter insights valiosos que nos ajudaram a tomar decisões mais assertivas.</p>
+              <div class="flex items-center gap-4">
+                <div class="testimonial-avatar">C</div>
+                <div>
+                  <p class="font-medium text-blue-900">Carlos Mendes</p>
+                  <p class="text-sm text-gray-500">CEO, Inovativa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="card">
+            <div class="card-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="quote-icon">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+              </svg>
+              <p class="testimonial-text">O chatbot personalizado que a MargotAI desenvolveu para nossa empresa melhorou significativamente nosso atendimento ao cliente, reduzindo o tempo de resposta e aumentando a satisfação.</p>
+              <div class="flex items-center gap-4">
+                <div class="testimonial-avatar">P</div>
+                <div>
+                  <p class="font-medium text-blue-900">Patrícia Oliveira</p>
+                  <p class="text-sm text-gray-500">Gerente de Atendimento, Conecta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="client-logos">
+          <span class="client-logo">TechCorp</span>
+          <span class="client-logo">Inovativa</span>
+          <span class="client-logo">Conecta</span>
+          <span class="client-logo">FutureBank</span>
+          <span class="client-logo">EcoSolutions</span>
+          <span class="client-logo">DigitalWave</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section cta">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="cta-title text-3xl font-bold mb-4">Pronto para transformar seu negócio?</h2>
+          <p class="cta-text">Comece hoje mesmo a utilizar o poder da inteligência artificial a favor do seu negócio</p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="#" class="btn btn-lg btn-white">
+              Experimente Grátis por 14 dias
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+            <a href="#" class="btn btn-lg btn-white-outline">Agende uma Demonstração</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div>
+          <h3 class="footer-title">MargotAI</h3>
+          <p class="footer-text">Soluções inteligentes com IA integrada para transformar seu negócio.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+              </svg>
+              <span class="sr-only">Twitter</span>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span class="sr-only">Facebook</span>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+              <span class="sr-only">Instagram</span>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              <span class="sr-only">GitHub</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Products -->
+        <div>
+          <h3 class="footer-title">Produtos</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Margot Dashboard</a></li>
+            <li><a href="#" class="footer-link">Margot Story</a></li>
+            <li><a href="#" class="footer-link">Combo Completo</a></li>
+            <li><a href="#" class="footer-link">Preços</a></li>
+          </ul>
+        </div>
+        
+        <!-- Services -->
+        <div>
+          <h3 class="footer-title">Serviços</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Sites Institucionais</a></li>
+            <li><a href="#" class="footer-link">Blogs Automatizados</a></li>
+            <li><a href="#" class="footer-link">Lojas Online</a></li>
+            <li><a href="#" class="footer-link">Chatbots Personalizados</a></li>
+          </ul>
+        </div>
+        
+        <!-- Newsletter -->
+        <div>
+          <h3 class="footer-title">Inscreva-se</h3>
+          <p class="footer-text">Receba novidades e atualizações sobre nossos produtos e serviços.</p>
+          <form class="footer-form">
+            <input type="email" placeholder="Seu email" class="footer-input">
+            <button type="submit" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+              <span class="sr-only">Enviar</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>© 2025 MargotAI. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Simple mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        
+        // Change icon based on menu state
+        if (mobileMenu.classList.contains('active')) {
+          menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>';
+        } else {
+          menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
+        }
+      });
+      
+      // Close mobile menu when clicking on a link
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+          menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
